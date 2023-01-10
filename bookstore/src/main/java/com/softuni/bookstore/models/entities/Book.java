@@ -26,6 +26,10 @@ public class Book {
 //
 //    private Category category;
 
+
+    public Book() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
@@ -36,7 +40,7 @@ public class Book {
         this.id = id;
     }
 
-    @Column
+    @Column(nullable = false)
     public String getName() {
         return name;
     }
@@ -45,7 +49,7 @@ public class Book {
         this.name = name;
     }
 
-    
+    @Column(nullable = false, name = "published_on")
     public Date getPublishedOn() {
         return publishedOn;
     }
@@ -54,6 +58,7 @@ public class Book {
         this.publishedOn = publishedOn;
     }
 
+    @Column(nullable = false)
     public String getDescription() {
         return description;
     }
@@ -62,6 +67,7 @@ public class Book {
         this.description = description;
     }
 
+    @Column(nullable = false)
     public Integer getPrice() {
         return price;
     }
