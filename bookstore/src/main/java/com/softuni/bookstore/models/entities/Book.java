@@ -10,9 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "books")
-public class Book {
-
-    private Long id;
+public class Book extends BaseEntity{
 
     private String name;
 
@@ -30,23 +28,14 @@ public class Book {
     public Book() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(nullable = false)
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Book setName(String name) {
         this.name = name;
+        return this;
     }
 
     @Column(nullable = false, name = "published_on")
@@ -54,8 +43,9 @@ public class Book {
         return publishedOn;
     }
 
-    public void setPublishedOn(Date publishedOn) {
+    public Book setPublishedOn(Date publishedOn) {
         this.publishedOn = publishedOn;
+        return this;
     }
 
     @Column(nullable = false)
@@ -63,16 +53,17 @@ public class Book {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Book setDescription(String description) {
         this.description = description;
+        return this;
     }
-
     @Column(nullable = false)
     public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public Book setPrice(Integer price) {
         this.price = price;
+        return this;
     }
 }

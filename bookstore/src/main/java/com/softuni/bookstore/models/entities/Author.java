@@ -7,11 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table
-public class Author {
-
-
-    private Long id;
+@Table(name = "authors")
+public class Author extends BaseEntity{
 
     private String firstName;
 
@@ -23,17 +20,6 @@ public class Author {
 
     public Author() {
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(name = "first_name", nullable = false)
     public String getFirstName() {
         return firstName;
