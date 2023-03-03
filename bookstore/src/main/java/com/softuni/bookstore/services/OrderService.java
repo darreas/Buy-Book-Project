@@ -1,4 +1,4 @@
 package com.softuni.bookstore.services;
 
-public interface OrderService {
+public class OrderService {
 }

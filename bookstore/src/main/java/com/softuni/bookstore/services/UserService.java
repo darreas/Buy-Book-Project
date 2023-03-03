@@ -1,4 +1,4 @@
 package com.softuni.bookstore.services;
 
-public interface UserService {
+public class UserService {
 }

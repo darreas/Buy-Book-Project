@@ -1,6 +1,7 @@
 package com.softuni.bookstore.models.entities;
 
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import org.hibernate.annotations.GenericGenerator;
@@ -8,21 +9,18 @@ import org.hibernate.annotations.GenericGenerator;
 @MappedSuperclass
 public abstract class BaseEntity {
 
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public BaseEntity() {
     }
 
-    @Id
-    @GeneratedValue(generator = "uuid-string")
-    @GenericGenerator(name = "uuid-string",
-            strategy = "org.hibernate.id.UUIDGenerator")
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public BaseEntity setId(String id) {
+    public void setId(Long id) {
         this.id = id;
-        return this;
     }
 }

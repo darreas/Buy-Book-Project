@@ -1,9 +1,9 @@
 package com.softuni.bookstore.repositories;
 
-import com.softuni.bookstore.models.entities.Author;
+import com.softuni.bookstore.models.entities.AuthorEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AuthorRepository extends JpaRepository<Author, String> {
+public interface AuthorRepository extends JpaRepository<AuthorEntity, String> {
 }
